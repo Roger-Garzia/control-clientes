@@ -47,49 +47,76 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" class="form-control" #nombre="ngModel" [(ngModel)]="cliente.nombre"
-                  [ngClass]="{'is-invalid': nombre.errors && nombre.touched}" required minlength="2">
-                <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
-                  Nombre requerido
-                </div>
-                <div [hidden]="!nombre.errors?.minlength" class="invalid-feedback">
-                  Debe contener al menos 2 caracteres
-                </div>
+                  <label for="nombre">Nombre</label>
+                  <input type="text" 
+                  name="nombre" 
+                  class="form-control" 
+                  #nombre="ngModel"
+                  placeholder="Ingresar Nombre"
+                  [(ngModel)]="cliente.nombre" 
+                  [ngClass]="{'is-invalid': nombre.errors && nombre.touched}"
+                  minlength="2"
+                  required
+                  >
+                  <div [hidden]="!nombre.errors?.required" class="invalid-feedback">
+                      El Nombre es Requerido
+                  </div>
+                  <div [hidden]="!nombre.errors?.minlength" class="invalid-feedback">
+                      El Nombre debe contener al menos 2 caracteres
+                  </div>
               </div>
-
               <div class="form-group">
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" class="form-control" #apellido="ngModel" [(ngModel)]="cliente.apellido"
-                  [ngClass]="{'is-invalid': apellido.errors && apellido.touched}" required minlength="2">
-                <div [hidden]="!apellido.errors?.required" class="invalid-feedback">
-                  Apellido requerido
-                </div>
-                <div [hidden]="!apellido.errors?.minlength" class="invalid-feedback">
-                  Debe contener al menos 2 caracteres
-                </div>
+                  <label for="apellido">Apellido</label>
+                  <input type="text" 
+                  name="apellido" 
+                  class="form-control" 
+                  placeholder="Ingresar Apellido"
+                  #apellido="ngModel"
+                  [(ngModel)]="cliente.apellido" 
+                  [ngClass]="{'is-invalid': apellido.errors && apellido.touched}"
+                  minlength="2"
+                  required                        
+                  >
+                  <div [hidden]="!apellido.errors?.required" class="invalid-feedback">
+                      El Apellido es Requerido
+                  </div>
+                  <div [hidden]="!apellido.errors?.minlength" class="invalid-feedback">
+                      El Apellido debe contener al menos 2 caracteres
+                  </div>                        
               </div>
-
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" #email="ngModel" [(ngModel)]="cliente.email"
-                  [ngClass]="{'is-invalid': email.errors && email.touched}" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                  required>
-                <div [hidden]="!email.errors?.required" class="invalid-feedback">
-                  Email requerido
-                </div>
-                <div [hidden]="!email.errors?.pattern" class="invalid-feedback">
-                  Email no es válido
-                </div>
+                  <label for="email">Email</label>
+                  <input type="email" 
+                  name="email" 
+                  class="form-control" 
+                  placeholder="Ingresar Email"
+                  #email="ngModel"
+                  [(ngModel)]="cliente.email" 
+                  [ngClass]="{'is-invalid': email.errors && email.touched}"
+                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                  required                  
+                  >
+                  <div [hidden]="!email.errors?.required" class="invalid-feedback">
+                      El Correo electrónico es Requerido
+                  </div>
+                  <div [hidden]="!email.errors?.pattern" class="invalid-feedback">
+                      Correo electrónico No Válido
+                  </div>                      
               </div>
-
               <div class="form-group">
-                <label for="saldo">Saldo</label>
-                <input type="number" name="saldo" class="form-control" #saldo="ngModel" [(ngModel)]="cliente.saldo"
-                  [ngClass]="{'is-invalid': saldo.errors && saldo.touched}" required>
-                <div [hidden]="!saldo.errors?.required" class="invalid-feedback">
-                  Saldo requerido
-                </div>
+                  <label for="saldo">Saldo</label>
+                  <input type="number" 
+                  name="saldo" 
+                  class="form-control" 
+                  placeholder="Ingresar Saldo"
+                  #saldo="ngModel"
+                  [(ngModel)]="cliente.saldo" 
+                  [ngClass]="{'is-invalid': saldo.errors && saldo.touched}"
+                  required                        
+                  >
+                  <div [hidden]="!saldo.errors?.required" class="invalid-feedback">
+                      El campo de Saldo es Requerido
+                  </div>                      
               </div>
             </div>
           </div>

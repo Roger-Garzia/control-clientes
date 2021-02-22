@@ -32,7 +32,7 @@ export class EditarClienteComponent implements OnInit {
   }
 
   guardar({value, valid}: {value: Cliente, valid: boolean}) {
-    if (!valid) {
+    if(!valid) {
       this.flashMessages.show('Por favor llena el formulario correctamente', {
         cssClass: 'alert-danger',
         timeout: 3000

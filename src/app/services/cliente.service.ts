@@ -38,7 +38,7 @@ export class ClienteService {
   }
 
   getCliente(id: string) {
-    this.clienteDoc = this.db.doc<Cliente>(`clientes/${id}`);
+    this.clienteDoc = this.db.doc<Cliente>(`control-clientes/${id}`);
     this.cliente = this.clienteDoc.snapshotChanges().pipe(
       map( accion => {
         if(accion.payload.exists === false) {
@@ -54,12 +54,12 @@ export class ClienteService {
   }
 
   clientEdition(cliente: Cliente) {
-    this.clienteDoc = this.db.doc(`clientes/${cliente.id}`);
+    this.clienteDoc = this.db.doc(`control-clientes/${cliente.id}`);
     this.clienteDoc.update(cliente);
   }
 
   clientDelete(cliente: Cliente) {
-    this.clienteDoc = this.db.doc(`clientes/${cliente.id}`);
+    this.clienteDoc = this.db.doc(`control-clientes/${cliente.id}`);
     this.clienteDoc.delete();
   }
 
